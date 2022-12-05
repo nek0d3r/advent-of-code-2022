@@ -21,4 +21,5 @@ secondElf = max(totalCal)
 totalCal.remove(secondElf)
 thirdElf = max(totalCal)
 
-print(firstElf + secondElf + thirdElf)
+print(f"Total calories of top elf: {firstElf}")
+print(f"Total calories of top three elves: {firstElf + secondElf + thirdElf}")
