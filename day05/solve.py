@@ -24,9 +24,9 @@ with open("input.txt") as f:
             crane = []
             for i in range(0, int(move[0])):
                 crate = stacks[move[1]].pop()
+                crane.append(part2Stacks[move[1]].pop())
                 stacks[move[2]].append(crate)
-                crane.append(crate)
-            for i in range(0, len(crate)):
+            for i in range(0, len(crane)):
                 crate = crane.pop()
                 part2Stacks[move[2]].append(crate)
     print("Message response: ", end = "")
