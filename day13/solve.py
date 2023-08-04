@@ -1,4 +1,4 @@
-import ast, os
+import ast
 
 def compare(left, right, depth = 0):
     print(f"{left}<=>{right}")
@@ -18,12 +18,6 @@ def compare(left, right, depth = 0):
         else:
             print("Inputs are in wrong order")
             return False
-    elif len(left) == 0:
-        print("Inputs are in right order")
-        return True
-    elif len(right) == 0:
-        print("Inputs are in wrong order")
-        return False
     else:
         i = 0
         while i < len(left) and i < len(right):
@@ -34,6 +28,9 @@ def compare(left, right, depth = 0):
         if i == len(right) and i < len(left):
             print("Inputs are in wrong order")
             return False
+        elif i == len(left) and i < len(right):
+            print("Inputs are in right order")
+            return True
         elif depth > 0:
             print("Continue compare")
             return None
@@ -41,7 +38,7 @@ def compare(left, right, depth = 0):
             print("Ran out of items, inputs are in right order")
             return True
 
-with open("input.txt") as f:
+with open("C:\\Users\\darkl\\source\\repos\\advent-of-code-2022\\day13\\input.txt") as f:
     index = 1
     sum = 0
     while True:
@@ -56,8 +53,8 @@ with open("input.txt") as f:
         result = compare(left, right)
         print(result)
         print()
-        input()
-        os.system("cls")
+        if result == None:
+            input()
 
         if result:
             sum += index
